@@ -5,7 +5,7 @@ const ProductFilter = ({ onFilterChange }) => {
   const [category, setCategory] = React.useState('');
   const [company, setCompany] = React.useState('');
   const [rating, setRating] = React.useState('');
-  const [minPrice, setMinPrice] = React.useState(0);
+  const [minPrice, setMinPrice] = React.useState(1);
   const [maxPrice, setMaxPrice] = React.useState(1000000);
 
   const handleFilter = () => {

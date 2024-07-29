@@ -1,0 +1,34 @@
+/* src/styles.css */
+.App {
+    font-family: Arial, sans-serif;
+    padding: 16px;
+}
+
+h1 {
+    margin-bottom: 24px;
+}
+
+.product-card {
+    margin: 16px;
+    border: 1px solid #ddd;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-card h2 {
+    margin: 0 0 8px;
+}
+
+.product-card p {
+    margin: 4px 0;
+}
+
+.product-card a {
+    color: blue;
+    text-decoration: underline;
+}

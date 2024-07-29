@@ -10,7 +10,7 @@ const AllProductsPage = () => {
     category: '',
     company: '',
     rating: '',
-    minPrice: 0,
+    minPrice: 1,
     maxPrice: 1000000,
     sort: 'price',
     order: 'asc',
