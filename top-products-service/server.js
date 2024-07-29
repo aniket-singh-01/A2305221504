@@ -1,14 +1,16 @@
 const express = require('express');
 const axios = require('axios');
 const { v4: uuidv4 } = require('uuid');
+const cors = require('cors'); // Import CORS
 
 const app = express();
 const PORT = 3000;
 
 // Access Token
-const ACCESS_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzIyMjUxNzE2LCJpYXQiOjE3MjIyNTE0MTYsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6ImJmODM5NTQ0LWMyMzUtNGY4ZC04NjE3LTUwNjUxNmNhYWY4OCIsInN1YiI6IndvcmsuYW5pa2V0c2luZ2hAZ21haWwuY29tIn0sImNvbXBhbnlOYW1lIjoiQW1pdHkgVW5pdmVyc2l0eSIsImNsaWVudElEIjoiYmY4Mzk1NDQtYzIzNS00ZjhkLTg2MTctNTA2NTE2Y2FhZjg4IiwiY2xpZW50U2VjcmV0IjoiUlRnbnNLbllMT29pR3NqayIsIm93bmVyTmFtZSI6IkFuaWtldCBTaW5naCIsIm93bmVyRW1haWwiOiJ3b3JrLmFuaWtldHNpbmdoQGdtYWlsLmNvbSIsInJvbGxObyI6IkEyMzA1MjIxNTA0In0.cNd6nqtf5IIxHLyhiqSwAMl5bApx8zDoQX4KgsdQhj4';
+const ACCESS_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzIyMjUyNTI3LCJpYXQiOjE3MjIyNTIyMjcsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6ImJmODM5NTQ0LWMyMzUtNGY4ZC04NjE3LTUwNjUxNmNhYWY4OCIsInN1YiI6IndvcmsuYW5pa2V0c2luZ2hAZ21haWwuY29tIn0sImNvbXBhbnlOYW1lIjoiQW1pdHkgVW5pdmVyc2l0eSIsImNsaWVudElEIjoiYmY4Mzk1NDQtYzIzNS00ZjhkLTg2MTctNTA2NTE2Y2FhZjg4IiwiY2xpZW50U2VjcmV0IjoiUlRnbnNLbllMT29pR3NqayIsIm93bmVyTmFtZSI6IkFuaWtldCBTaW5naCIsIm93bmVyRW1haWwiOiJ3b3JrLmFuaWtldHNpbmdoQGdtYWlsLmNvbSIsInJvbGxObyI6IkEyMzA1MjIxNTA0In0.Wd4T_qUtUb8nTJ3rjQJf0kMGp4AI_TBb__5v2czHBCA';
 
 // Middleware
+app.use(cors()); // Enable CORS for all routes
 app.use(express.json());
 
 // Helper function to fetch products from the test server
